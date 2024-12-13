@@ -38,7 +38,7 @@ jobs:
         if: success() || failure()
         with:
           api_key: ${{ secrets.FORESIGHT_KEY }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
@@ -84,7 +84,7 @@ jobs:
             environment: '{ "CHROMIUM_EXECUTABLE_PATH": "google-chrome-stable" }'
     name: Jest puppeteer on Node ${{ matrix.node-version }} with ${{ matrix.chromium.name }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
@@ -117,7 +117,7 @@ jobs:
         node-version: [ 14, 16, 18 ]
     name: Build docs on Node ${{ matrix.node-version }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
@@ -140,7 +140,7 @@ jobs:
         node-version: [ 14, 16, 18 ]
     name: Build radar and maintainer on Node ${{ matrix.node-version }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
